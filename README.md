@@ -21,7 +21,7 @@ Check the following tables and details to understand the binary structure of the
 
 ### Frame
 
-The default frame secures transport with a start and end byte plus the crc16 checksum of the payload.
+The default frame secures transport with a start and end byte plus the crc32 checksum of the payload.
 
 The payload can be up to 64 KB.
 
@@ -31,7 +31,7 @@ The payload can be up to 64 KB.
 
 * **payload_size**: the payload in amount of bytes
 * **payload**: the payload
-* **checkusm**: crc16 checksum of the payload
+* **checkusm**: crc32 checksum of the payload
 
 ### Instruction
 
