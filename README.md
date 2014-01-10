@@ -26,7 +26,7 @@ The default frame secures transport with a start and end byte plus the crc32 che
 The payload can be up to 64 KB.
 
     +------+-----------------+~~~~~~~~~+-------------+------+
-    | 0x55 | payload_size 2B | payload | checksum 2B | 0xAA |
+    | 0x55 | payload_size 2B | payload | checksum 4B | 0xAA |
     +------+-----------------+~~~~~~~~~+-------------+------+
 
 * **payload_size**: the payload in amount of bytes
