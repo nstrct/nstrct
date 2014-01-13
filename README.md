@@ -19,6 +19,20 @@ _This software has been open sourced by [ElectricFeel Mobility Systems Gmbh](htt
 
 Check the following tables and details to understand the binary structure of the protocol. Keep in mind that network byte order (BigEndian) is used by all implementations and libraries.
 
+### Frame
+
+The default frame secures transport with a start and end byte plus the crc32 checksum of the payload.
+
+The payload can be up to 64 KB.
+
+    +------+-----------------+~~~~~~~~~+-------------+------+
+    | 0x55 | payload_size 2B | payload | checksum 4B | 0xAA |
+    +------+-----------------+~~~~~~~~~+-------------+------+
+
+* **payload_size**: the payload in amount of bytes
+* **payload**: the payload
+* **checkusm**: crc32 checksum of the payload
+
 ### Instruction
 
 An instruction can have up to 255 arguments.

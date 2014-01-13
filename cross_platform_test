@@ -18,9 +18,21 @@ lengths = EXECUTABLES.map do |type, exe|
 end
 puts lengths
 
+puts "== compare generation =="
+EXECUTABLES.keys.permutation(2).each do |combination|
+  puts "  #{combination[0]} == #{combination[1]}"
+  s1 = `#{EXECUTABLES[combination[0]]} -g`
+  s2 = `#{EXECUTABLES[combination[1]]} -g`
+  if s1 == s2
+    puts "    similar"
+  else
+    puts "    different"
+  end
+end
+
 puts "== testing instruction processing =="
 EXECUTABLES.keys.permutation(2).each do |combination|
   puts "  #{combination[0]} => #{combination[1]}"
-  system "  #{EXECUTABLES[combination[0]]} -g | #{EXECUTABLES[combination[1]]} -p"
+  system "#{EXECUTABLES[combination[0]]} -g | #{EXECUTABLES[combination[1]]} -p"
   puts "    test failed" if $? != 0
 end
