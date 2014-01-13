@@ -5,9 +5,9 @@ require 'pp'
 # assumes that all nstrct libraries are in the same directory
 EXECUTABLES = { 
   ruby: File.expand_path('../../nstrct-ruby/cross_platform_test', __FILE__),
-  java: File.expand_path('../../nstrct-java/cross_platform_test', __FILE__),
+  # java: File.expand_path('../../nstrct-java/cross_platform_test', __FILE__),
   c: File.expand_path('../../nstrct-c/cross_platform_test', __FILE__),
-  objc: File.expand_path('../../nstrct-objc/run_cross_platform_test', __FILE__)
+  # objc: File.expand_path('../../nstrct-objc/run_cross_platform_test', __FILE__)
 }
 
 puts "== testing instruction generation =="
